@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, Suspense } from 'react';
+import {  Suspense } from 'react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Button from '@/components/ui/Button';
@@ -18,7 +18,7 @@ const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), {
 });
 
 const HeroSection = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
+//   const heroRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">

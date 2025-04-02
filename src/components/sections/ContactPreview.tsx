@@ -192,7 +192,7 @@ const ContactPreview = () => {
           >
             <h3 className="text-xl font-semibold mb-6">Ready to start a project?</h3>
             <p className="text-muted-foreground mb-6">
-              I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+              I&apos;m always open to discussing new projects, creative ideas or opportunities to be part of your vision.
             </p>
             <Link href="/contact" className="block">
               <Button fullWidth>Get in Touch</Button>

@@ -12,7 +12,7 @@ type ButtonProps = {
   size?: ButtonSize;
   isLoading?: boolean;
   fullWidth?: boolean;
-  className?: String;
+  className?: string;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof HTMLMotionProps<"button">> & 
   Omit<HTMLMotionProps<"button">, "children" | "className">;
 

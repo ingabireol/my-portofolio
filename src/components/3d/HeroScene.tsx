@@ -11,7 +11,7 @@ import { useTheme } from '@/app/providers';
 const ParticleField = () => {
   const { theme } = useTheme();
   const groupRef = useRef<Group>(null);
-  const { viewport, mouse } = useThree();
+  const { mouse } = useThree();
   
   // Create a custom particles system
   useEffect(() => {

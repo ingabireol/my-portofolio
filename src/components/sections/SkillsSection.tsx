@@ -96,7 +96,7 @@ const SkillsSection = () => {
       animate={isVisible ? 'visible' : 'hidden'}
       className="grid grid-cols-1 md:grid-cols-3 gap-8"
     >
-      {skillCategories.map((category, index) => (
+      {skillCategories.map((category) => (
         <motion.div
           key={category.name}
           variants={slideInVariant('up')}

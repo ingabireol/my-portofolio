@@ -72,7 +72,7 @@ const AboutPage = () => {
                 variants={fadeUpVariant}
                 className="text-muted-foreground"
               >
-                I'm a full-stack developer with over 5 years of experience building web applications. My journey into web development started when I built my first website for a local business. The ability to transform ideas into interactive experiences fascinated me and led me to pursue a career in software development.
+                I&apos;m a full-stack developer with over 5 years of experience building web applications. My journey into web development started when I built my first website for a local business. The ability to transform ideas into interactive experiences fascinated me and led me to pursue a career in software development.
               </motion.p>
               
               <motion.p
@@ -93,7 +93,7 @@ const AboutPage = () => {
                 variants={fadeUpVariant}
                 className="text-muted-foreground"
               >
-                I believe in building applications that are not just functional but also intuitive, accessible, and performant. Every project I undertake is an opportunity to create something that provides real value to users while pushing the boundaries of what's possible on the web.
+                I believe in building applications that are not just functional but also intuitive, accessible, and performant. Every project I undertake is an opportunity to create something that provides real value to users while pushing the boundaries of what&apos;s possible on the web.
               </motion.p>
               
               <motion.div

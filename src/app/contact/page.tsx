@@ -174,7 +174,7 @@ const ContactPage = () => {
                   className="bg-primary/10 border border-primary/30 text-primary p-6 rounded-lg"
                 >
                   <h3 className="text-xl font-medium mb-2">Thank you for your message!</h3>
-                  <p className="mb-4">I've received your inquiry and will get back to you as soon as possible.</p>
+                  <p className="mb-4">I&apos;ve received your inquiry and will get back to you as soon as possible.</p>
                   <Button onClick={() => setFormSubmitted(false)}>Send Another Message</Button>
                 </motion.div>
               ) : (
@@ -241,7 +241,7 @@ const ContactPage = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
                 <p className="text-muted-foreground mb-8">
-                  Feel free to reach out with any questions or inquiries. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                  Feel free to reach out with any questions or inquiries. I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                 </p>
               </div>
 
@@ -475,7 +475,7 @@ const ContactPage = () => {
               >
                 <h3 className="text-xl font-semibold mb-2">What is your typical project timeline?</h3>
                 <p className="text-muted-foreground">
-                  Project timelines vary depending on the scope and complexity. A simple website might take 2-4 weeks, while a complex web application could take 2-3 months or more. I'll provide a detailed timeline during our initial consultation.
+                  Project timelines vary depending on the scope and complexity. A simple website might take 2-4 weeks, while a complex web application could take 2-3 months or more. I&apos;ll provide a detailed timeline during our initial consultation.
                 </p>
               </motion.div>
 
@@ -495,7 +495,7 @@ const ContactPage = () => {
               >
                 <h3 className="text-xl font-semibold mb-2">How do we get started working together?</h3>
                 <p className="text-muted-foreground">
-                  Simply reach out through the contact form above or send me an email. We'll schedule an initial consultation to discuss your project requirements, goals, timeline, and budget. From there, I'll provide a proposal and we can move forward with the development process.
+                  Simply reach out through the contact form above or send me an email. We&apos;ll schedule an initial consultation to discuss your project requirements, goals, timeline, and budget. From there, I&apos;ll provide a proposal and we can move forward with the development process.
                 </p>
               </motion.div>
             </div>

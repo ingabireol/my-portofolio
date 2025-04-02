@@ -326,7 +326,7 @@ const ProjectsPage = () => {
               variants={fadeUpVariant}
               className="text-muted-foreground mb-12"
             >
-              I've had the pleasure of working with a diverse range of clients.
+              I&apos;ve had the pleasure of working with a diverse range of clients.
               Here are some highlights from my professional projects.
             </motion.p>
 
@@ -384,13 +384,13 @@ const ProjectsPage = () => {
           >
             <h2 className="text-3xl font-bold mb-6">Have a project in mind?</h2>
             <p className="text-muted-foreground mb-8">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
             <Link 
               href="/contact"
               className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </motion.div>
         </div>
