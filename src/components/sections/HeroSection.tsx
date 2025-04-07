@@ -8,6 +8,8 @@ import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import AnimatedBackground from '@/components/animations/AnimatedBackground';
 import AnimatedCountdown from '@/components/animations/AnimatedCountdown';
 import { fadeUpVariant, fadeInVariant } from '@/lib/animationVariants';
+import AnimatedSvgBackground from '@/components/animations/AnimatedSvgBackground';
+import EnhancedSvgIllustration from '../animations/EnhancedSvgIllustration';
 
 // Dynamically import the 3D scene to avoid SSR issues
 const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), {
@@ -39,7 +41,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Animated background */}
-      <AnimatedBackground />
+      <AnimatedSvgBackground />
       
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/80 to-background"></div>
@@ -66,23 +68,28 @@ const HeroSection = () => {
           <AnimatePresence>
             {!hasAnimationStarted && (
               <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 0.5 }}
-                className="text-center"
-              >
-                <h2 className="text-2xl font-medium mb-8 text-foreground/90">Welcome to My Portfolio</h2>
-                <AnimatedCountdown 
-                  onComplete={() => {
-                    handleCountdownComplete();
-                    setTimeout(() => {
-                      startIntroAnimation();
-                    }, 500);
-                  }}
-                  autoStart={true}
-                />
-              </motion.div>
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground/90 drop-shadow-md">
+                Welcome to My <span className="text-primary">Portfolio</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
+                Prepare to explore my work and skills in just
+              </p>
+              <AnimatedCountdown 
+                onComplete={() => {
+                  handleCountdownComplete();
+                  setTimeout(() => {
+                    startIntroAnimation();
+                  }, 500);
+                }}
+                autoStart={true}
+              />
+            </motion.div>
             )}
           </AnimatePresence>
 
@@ -139,110 +146,14 @@ const HeroSection = () => {
                   className="hidden lg:flex justify-center items-center"
                 >
                   {/* Animated SVG illustration */}
-                  <motion.svg
-                    width="400"
-                    height="400"
-                    viewBox="0 0 400 400"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="w-full max-w-md"
-                  >
-                    <defs>
-                      <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="var(--primary)" />
-                        <stop offset="100%" stopColor="var(--secondary)" />
-                      </linearGradient>
-                    </defs>
-                    
-                    {/* Animated circles */}
-                    <motion.circle
-                      cx="200" cy="200" r="160"
-                      fill="none"
-                      stroke="url(#circleGradient)"
-                      strokeWidth="2"
-                      initial={{ strokeDasharray: 1000, strokeDashoffset: 1000 }}
-                      animate={{ strokeDashoffset: 0 }}
-                      transition={{ duration: 2, ease: "easeInOut" }}
-                    />
-                    
-                    <motion.circle
-                      cx="200" cy="200" r="120"
-                      fill="none"
-                      stroke="url(#circleGradient)"
-                      strokeWidth="4"
-                      strokeDasharray="10 5"
-                      initial={{ rotate: 0 }}
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                    />
-                    
-                    <motion.g
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.5, duration: 1, type: "spring" }}
-                    >
-                      {/* Small tech nodes */}
-                      {['React', 'Node.js', 'TypeScript', 'Next.js', 'MongoDB'].map((tech, i) => {
-                        const angle = (i * 72) * Math.PI / 180;
-                        const x = 200 + 80 * Math.cos(angle);
-                        const y = 200 + 80 * Math.sin(angle);
-                        
-                        return (
-                          <motion.g key={tech}>
-                            <motion.circle
-                              cx={x} cy={y} r="20"
-                              fill="var(--background)"
-                              stroke="var(--primary)"
-                              strokeWidth="2"
-                              whileHover={{ scale: 1.2 }}
-                              animate={{ 
-                                y: [y, y - 5, y],
-                                opacity: [0.7, 1, 0.7]
-                              }}
-                              transition={{ 
-                                duration: 2 + i * 0.5, 
-                                repeat: Infinity,
-                                delay: i * 0.3
-                              }}
-                            />
-                            <motion.text
-                              x={x} y={y}
-                              textAnchor="middle"
-                              dominantBaseline="middle"
-                              fill="var(--foreground)"
-                              fontSize="8"
-                              fontWeight="bold"
-                            >
-                              {tech}
-                            </motion.text>
-                          </motion.g>
-                        );
-                      })}
-                      
-                      {/* Central node */}
-                      <motion.circle
-                        cx="200" cy="200" r="30"
-                        fill="var(--primary)"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ 
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: "easeInOut" 
-                        }}
-                      />
-                      <motion.text
-                        x="200" y="200"
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                        fill="var(--primary-foreground)"
-                        fontSize="12"
-                        fontWeight="bold"
-                      >
-                        Full-Stack
-                      </motion.text>
-                    </motion.g>
-                  </motion.svg>
+                  <motion.div
+                  variants={fadeInVariant}
+                  className="hidden lg:flex justify-center items-center"
+                >
+                  <EnhancedSvgIllustration 
+                    technologies={['React', 'Node.js', 'TypeScript', 'Next.js', 'MongoDB']}
+                  />
+                </motion.div>
                 </motion.div>
               </motion.div>
             )}
